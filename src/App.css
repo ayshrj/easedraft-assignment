@@ -1,0 +1,62 @@
+body {
+  overflow-x: hidden;
+}
+.custom-button {
+    background-image: linear-gradient(#7559ff, #5636f3);
+    color: #fff;
+    border: none;
+    height: 52px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+  }
+  
+  .custom-button:hover {
+    color: white;
+    background-image: linear-gradient(#8f78ff, #5a3cee);
+
+  }
+
+.first-half{
+    background-color: #E6E0F4;
+    background-image: url('./assets/topMostBackground.svg');
+    height: 100%;
+    z-index: 0;
+  }
+
+/* .second-half-background {
+  background-color: #775CFE;
+  background-size: cover;
+  background-position: center; 
+  min-height: 100vh; 
+  position: relative; 
+  filter: blur(150px);
+  width: 200vw;
+  height: 954px;
+  top: -50%;
+  bottom: -50%;
+  left: -50%;
+  right: -50%;
+  transform: rotate(-10deg) translate(0px, -350px);
+  z-index: 0;
+  overflow: hidden;
+  } */
+
+.third-half{
+  background-color: #775CFE;
+  background-size: cover;
+  background-position: center;
+  filter: blur(150px);
+  width: 200vw;
+  height: 954px;
+  margin-top: -800px;
+}
+
+.second-half-textpart{
+  font-size: 100px;
+  z-index: 100000000;
+}
+
+
+  .first-heading{
+    font-size: 72px;
+  }

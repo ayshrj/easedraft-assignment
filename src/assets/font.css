@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Roobert-Medium';
+    src: url('./Roobert-Medium.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Roobert-Regular';
+    src: url('./Roobert-Regular.woff2') format('woff2');
+  }
+  

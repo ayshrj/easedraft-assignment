@@ -1,0 +1,52 @@
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: #DBD2F5;
+    border-radius: 12px;
+    height: 48px;
+    width: 48px;
+  }
+  
+  .bar {
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    transition: 0.4s;
+  }
+  
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 5px);
+  }
+  
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -5px);
+  }
+
+  .hamburger-subitems {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .hamburger-subitems-open {
+    max-height: 200px; /* Set the maximum heighat you desire */
+  }
+  
+  .hamburger-subitems-close {
+    max-height: 0;
+  }
+  
+  .dropdown-below-navbar{
+    transition: max-height 0.3s ease-in-out;
+  }
