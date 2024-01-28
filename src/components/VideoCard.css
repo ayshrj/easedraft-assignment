@@ -24,12 +24,12 @@
 }
 .video-container {
     position: relative;
-    width: 734px;
-    height: 413px;
     border-radius: 25.5px;
     overflow: hidden;
     box-shadow: 0 4px 4px rgba(0,0,0,.07), 0 11px 10px rgba(0,0,0,.1), 0 20px 18px rgba(0,0,0,.13), 0 36px 32px rgba(0,0,0,.15), 0 68px 60px rgba(0,0,0,.18), 0 160px 140px rgba(0,0,0,.25);
   }
+
+  
   
   .blur-effect-top-left {
     position: absolute;

@@ -2,19 +2,25 @@ import React, { useState, useRef } from "react";
 import { Card, Modal } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 import "./VideoCard.css"; // Import a CSS file for styling
+import WindowWidthCalculator from "./Utility/WindowWidthCalculator";
 
 const VideoCard = ({ image, video }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const videoRef = useRef(null);
+  const { windowWidth } = WindowWidthCalculator();
 
   const videoStyle = {
-    width: "735px",
+    width: windowWidth < 708 ? "400px" : "734px",
     borderRadius: "10px",
     overflow: "hidden",
   };
 
   const showModal = () => {
     setIsModalVisible(true);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
   };
 
   const handleCancel = () => {
@@ -27,7 +33,13 @@ const VideoCard = ({ image, video }) => {
   return (
     <div>
       <div style={{ position: "relative", zIndex: 30 }}>
-        <div className="video-container">
+        <div
+          className="video-container"
+          style={{
+            width: windowWidth < 708 ? "400px" : "734px",
+            height: windowWidth < 708 ? "233px" : "413px",
+          }}
+        >
           <div className="blur-effect-top-left"></div>
           <video
             autoPlay
@@ -48,7 +60,7 @@ const VideoCard = ({ image, video }) => {
       </div>
 
       <Modal
-        visible={isModalVisible}
+        open={isModalVisible}
         onCancel={handleCancel}
         footer={null}
         style={{
@@ -57,8 +69,8 @@ const VideoCard = ({ image, video }) => {
           right: 0,
           mask: "rgba(0, 0, 0, 0.95)",
           zIndex: 9999999999,
+          padding: 0,
         }}
-        bodyStyle={{ padding: 0 }}
         width="80vw"
         centered={true}
       >

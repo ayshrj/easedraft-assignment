@@ -1,0 +1,15 @@
+.centered-container {
+    display: flex;
+    justify-content: center;
+  }
+
+
+    @keyframes scrollAnimation {
+        from {
+        transform: translateX(100%);
+        }
+        to {
+        transform: translateX(100%);
+        }
+    }
+    

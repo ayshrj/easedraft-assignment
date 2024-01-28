@@ -1,28 +1,49 @@
-import React from "react";
-import image1 from "../assets/company-associated-logo/image1.webp";
-import image2 from "../assets/company-associated-logo/image2.webp";
-import image3 from "../assets/company-associated-logo/image3.webp";
-import image4 from "../assets/company-associated-logo/image4.webp";
-import image5 from "../assets/company-associated-logo/image5.webp";
-import image6 from "../assets/company-associated-logo/image6.webp";
-import image7 from "../assets/company-associated-logo/image7.webp";
-import image8 from "../assets/company-associated-logo/image8.webp";
-import image9 from "../assets/company-associated-logo/image9.webp";
+import React, { useRef, useEffect } from "react";
+import "./ImageSlider.css";
 
-const ImageSlider = () => {
-  const images = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-    image8,
-    image9,
-  ];
+const ImageSlider = ({ myThingToScroll, speed, height, images }) => {
+  const imageContainerRef = useRef();
+  console.log(images);
 
-  return <div>fill this</div>;
+  useEffect(() => {
+    const container = imageContainerRef.current;
+
+    const handleAnimationEnd = () => {
+      container.appendChild(container.children[0].cloneNode(true));
+      container.removeChild(container.children[0]);
+      container.style.transform = "translateX(0)";
+    };
+
+    container.addEventListener("animationiteration", handleAnimationEnd);
+
+    return () => {
+      container.removeEventListener("animationiteration", handleAnimationEnd);
+    };
+  }, []);
+
+  const allImages = [...images, ...images, ...images, ...images]; // Repeat images to avoid repetition in JSX
+
+  return (
+    <div className="scrolling-container">
+      <div
+        className="image-gallery"
+        ref={imageContainerRef}
+        style={{
+          display: "flex",
+          animation: `scrollAnimation ${speed}s linear infinite`,
+        }}
+      >
+        {allImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Image ${index + 1}`}
+            style={{ height: height }}
+          />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default ImageSlider;

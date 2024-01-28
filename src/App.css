@@ -1,4 +1,7 @@
 body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; 
   overflow-x: hidden;
 }
 .custom-button {
@@ -49,6 +52,23 @@ body {
   width: 200vw;
   height: 954px;
   margin-top: -800px;
+
+}
+
+.third-part{
+  
+  /* width: 200vw; */
+  /* height: 954px; */
+  /* filter: blur(150px); */
+  background-color: #0c062c;
+  /* border-radius: 100%; */
+  /* flex-direction: column; */
+  /* top: -50%;
+  bottom: -50%;
+  left: -50%;
+  right: -50%; */
+  /* transform: rotate(-15deg); */
+  z-index: 400;
 }
 
 .second-half-textpart{
