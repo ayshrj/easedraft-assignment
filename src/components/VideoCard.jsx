@@ -60,6 +60,7 @@ const VideoCard = ({ image, video }) => {
             <div className="blur-effect-top-left"></div>
             <video
               autoPlay
+              loop
               muted
               controls={false}
               playsInline
