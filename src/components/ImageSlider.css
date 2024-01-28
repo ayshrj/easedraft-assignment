@@ -1,15 +1,21 @@
-.centered-container {
-    display: flex;
-    justify-content: center;
+.scrolling-container {
+    overflow: hidden; /* Hide overflow content outside the container */
+    width: 500px; /* Set the desired width */
   }
 
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
+  }
 
     @keyframes scrollAnimation {
         from {
         transform: translateX(100%);
         }
         to {
-        transform: translateX(100%);
+        transform: translateX(-100%);
         }
     }
     

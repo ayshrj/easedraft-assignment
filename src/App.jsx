@@ -112,23 +112,21 @@ const App = () => {
             <div>No credit card needed</div>
           </div>
         </div>
-        <div
+        {/* <div
           style={{
             display: "flex",
             justifyContent: "center",
             marginTop: "20px",
-            width: 200,
+            maxWidth: 500, // Set the maximum width to 500px
           }}
         >
-          <div style={{ width: "500px" }}>
-            <ImageSlider
-              myThingToScroll={"asdasd"}
-              speed={40}
-              height={100}
-              images={imagesTopSlide}
-            />
-          </div>
-        </div>
+          <ImageSlider
+            myThingToScroll={"asdasd"}
+            speed={20}
+            height={100}
+            images={imagesTopSlide}
+          />
+        </div> */}
         <div
           className="top-video"
           style={{
@@ -453,26 +451,7 @@ const App = () => {
             marginTop: 200,
             maxWidth: 1200,
           }}
-        >
-          <div
-            style={{
-              backgroundColor: "#fff",
-              borderTopLeftTadius: "24px",
-              borderTopRightRadius: "24px",
-              padding: "40px",
-              overflow: "hidden",
-            }}
-          >
-            {/* <div style={{ width: 1200 }}> */}
-            <ImageSlider
-              myThingToScroll={"asdasd"}
-              speed={100}
-              height={100}
-              images={imagesTopSlide}
-            />
-            {/* </div> */}
-          </div>
-        </div>
+        ></div>
       </div>
 
       {/* <div className="sixth-part" style={{ zIndex: 90 }}>

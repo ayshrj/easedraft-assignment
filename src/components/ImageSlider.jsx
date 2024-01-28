@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import "./ImageSlider.css";
+// ...
 
 const ImageSlider = ({ myThingToScroll, speed, height, images }) => {
   const imageContainerRef = useRef();
-  console.log(images);
 
   useEffect(() => {
     const container = imageContainerRef.current;
@@ -21,29 +21,45 @@ const ImageSlider = ({ myThingToScroll, speed, height, images }) => {
     };
   }, []);
 
-  const allImages = [...images, ...images, ...images, ...images]; // Repeat images to avoid repetition in JSX
+  const allImages = [
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+  ];
 
   return (
-    <div className="scrolling-container">
-      <div
-        className="image-gallery"
-        ref={imageContainerRef}
-        style={{
-          display: "flex",
-          animation: `scrollAnimation ${speed}s linear infinite`,
-        }}
-      >
-        {allImages.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Image ${index + 1}`}
-            style={{ height: height }}
-          />
-        ))}
+    <div className="centered-container">
+      <div className="scrolling-container">
+        <div
+          className="image-gallery"
+          ref={imageContainerRef}
+          style={{
+            display: "flex",
+            animation: `scrollAnimation ${speed}s linear infinite`,
+            maxWidth: 200, // Adjust this value as needed
+          }}
+        >
+          {allImages.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Image ${index + 1}`}
+              style={{ height: height }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
+
+// ...
 
 export default ImageSlider;
