@@ -41,7 +41,7 @@ const MarketingCard = ({
           marginTop: 40,
           marginBottom: 100,
           width: isMobile() ? "187px" : "",
-          zIndex: 100000,
+          zIndex: 10,
         }}
         cover={
           <video

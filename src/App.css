@@ -1,9 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh; 
-  overflow-x: hidden;
-}
+
 .custom-button {
     background-image: linear-gradient(#7559ff, #5636f3);
     color: #fff;
@@ -79,4 +74,41 @@ body {
 
   .first-heading{
     font-size: 72px;
+  }
+
+  @keyframes moveImageLeftToRight {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10%);
+    }
+  }
+  @keyframes moveImageRightToLeft {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-10%);
+    }
+  }
+
+  .error-message {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #ff7f7f;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 10000000000;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .error-message.hidden {
+    opacity: 0;
+    pointer-events: none;
   }

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Card, Modal } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 import "./VideoCard.css"; // Import a CSS file for styling
@@ -6,12 +6,22 @@ import WindowWidthCalculator from "./Utility/WindowWidthCalculator";
 
 const VideoCard = ({ image, video }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [maxHeight, setMaxHeight] = useState(0);
   const videoRef = useRef(null);
   const { windowWidth } = WindowWidthCalculator();
 
+  const calculateMaxHeight = () => {
+    const aspectRatio = 16 / 9;
+    const maxWidth = windowWidth < 708 ? 400 : 734;
+
+    return maxWidth / aspectRatio - 4;
+  };
+
   const videoStyle = {
     width: windowWidth < 708 ? "400px" : "734px",
-    borderRadius: "10px",
+    borderRadius: videoRef.current
+      ? window.getComputedStyle(videoRef.current).borderRadius
+      : "12px",
     overflow: "hidden",
   };
 
@@ -30,35 +40,43 @@ const VideoCard = ({ image, video }) => {
     }
   };
 
-  return (
-    <div>
-      <div style={{ position: "relative", zIndex: 30 }}>
-        <div
-          className="video-container"
-          style={{
-            width: windowWidth < 708 ? "400px" : "734px",
-            height: windowWidth < 708 ? "233px" : "413px",
-          }}
-        >
-          <div className="blur-effect-top-left"></div>
-          <video
-            autoPlay
-            muted
-            controls={false}
-            playsInline
-            style={{ ...videoStyle, height: "100%", borderRadius: "25.5px" }}
-            poster={image}
-          >
-            <source src={video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <button className="demo-button" onClick={showModal}>
-          <CaretRightOutlined />
-          Demo
-        </button>
-      </div>
+  useEffect(() => {
+    setMaxHeight(calculateMaxHeight());
+  }, [isModalVisible, windowWidth]);
 
+  return (
+    <>
+      <div>
+        <div style={{ position: "relative", zIndex: 30 }}>
+          <div
+            className="video-container"
+            style={{
+              width: windowWidth < 708 ? 400 : 734,
+              maxHeight: maxHeight,
+              borderRadius: "10px",
+              overflow: "hidden",
+            }}
+          >
+            <div className="blur-effect-top-left"></div>
+            <video
+              autoPlay
+              muted
+              controls={false}
+              playsInline
+              style={{ ...videoStyle, height: "100%", borderRadius: "25.5px" }}
+              poster={image}
+              ref={videoRef}
+            >
+              <source src={video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <button className="demo-button" onClick={showModal}>
+            <CaretRightOutlined />
+            Demo
+          </button>
+        </div>
+      </div>
       <Modal
         open={isModalVisible}
         onCancel={handleCancel}
@@ -84,7 +102,7 @@ const VideoCard = ({ image, video }) => {
           Your browser does not support the video tag.
         </video>
       </Modal>
-    </div>
+    </>
   );
 };
 
