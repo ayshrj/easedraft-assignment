@@ -72,9 +72,9 @@ const MarketingCard = ({
             style={{
               fontFamily: "Roobert-Regular",
               display: "flex",
-              flexDirection: "column", // Add this line
-              justifyContent: "space-between", // Add this line
-              height: "100%", // Add this line
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100%",
               padding: 30,
             }}
           >

@@ -1,6 +1,6 @@
 .scrolling-container {
-    overflow: hidden; /* Hide overflow content outside the container */
-    width: 500px; /* Set the desired width */
+    overflow: hidden;
+    width: 500px; 
   }
 
   .centered-container {

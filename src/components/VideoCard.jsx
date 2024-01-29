@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Card, Modal } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
-import "./VideoCard.css"; // Import a CSS file for styling
+import "./VideoCard.css";
 import WindowWidthCalculator from "./Utility/WindowWidthCalculator";
 
 const VideoCard = ({ image, video }) => {

@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import "./ImageSlider.css";
-// ...
 
 const ImageSlider = ({ myThingToScroll, speed, height, images }) => {
   const imageContainerRef = useRef();
@@ -43,7 +42,7 @@ const ImageSlider = ({ myThingToScroll, speed, height, images }) => {
           style={{
             display: "flex",
             animation: `scrollAnimation ${speed}s linear infinite`,
-            maxWidth: 200, // Adjust this value as needed
+            maxWidth: 200,
           }}
         >
           {allImages.map((image, index) => (
@@ -59,7 +58,5 @@ const ImageSlider = ({ myThingToScroll, speed, height, images }) => {
     </div>
   );
 };
-
-// ...
 
 export default ImageSlider;

@@ -152,7 +152,7 @@ const App = () => {
             display: "flex",
             justifyContent: "center",
             marginTop: "20px",
-            maxWidth: 500, // Set the maximum width to 500px
+            maxWidth: 500, 
           }}
         >
           <ImageSlider
@@ -188,10 +188,10 @@ const App = () => {
                 left: windowWidth < 708 ? "5%" : "24%",
                 height: windowWidth < 708 ? "200px" : "340px",
                 width: windowWidth < 708 ? "162px" : "277px",
-                backgroundColor: "rgba(255, 255, 255, 0.2)", // Adjust the alpha value for transparency
+                backgroundColor: "rgba(255, 255, 255, 0.2)",
                 padding: "34px",
                 borderRadius: "25px",
-                backdropFilter: "blur(30px)", // Set the blur effect
+                backdropFilter: "blur(30px)",
                 boxShadow: "0 60px 120px rgba(11,0,70,.7)",
                 zIndex: 31,
               }}
@@ -524,7 +524,7 @@ const App = () => {
                       marginLeft: -100,
                       animation: "moveImageLeftToRight 10s infinite",
                       zIndex: 200,
-                      position: "relative", // Ensure the image has a position other than 'static'
+                      position: "relative",
                     }}
                   />
                   <div
@@ -533,8 +533,8 @@ const App = () => {
                       justifyContent: "center",
                       alignItems: "center",
                       marginTop: -150,
-                      zIndex: 501, // Increase the z-index value
-                      position: "relative", // Ensure the container has a position other than 'static'
+                      zIndex: 501,
+                      position: "relative",
                     }}
                   >
                     <img
